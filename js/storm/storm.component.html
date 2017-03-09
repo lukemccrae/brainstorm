@@ -1,0 +1,12 @@
+<div class="container">
+    <h3>Storm {{$ctrl.storm.id}}</h3>
+    <h2>{{$ctrl.storm.name}}</h2>
+    <form ng-submit="$ctrl.createEntry()">
+        <input class="form-control" ng-model="$ctrl.entry.content" type="text" name="" value="">
+        <button class="btn btn-default" type="submit" name="">Create Entry</button>
+        <button ui-sref="create" class="btn btn-default" type="" name="">Home</button>
+    </form>
+    <div class="" ng-repeat="entry in $ctrl.entries">
+        <h3>{{entry.content}}</h3>
+    </div>
+</div>
