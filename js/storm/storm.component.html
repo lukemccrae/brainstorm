@@ -1,12 +1,20 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <img height="60" width="60" src="images/brainstorm.png" alt="">
+        <h3 class="inline">Brainstorm</h3>
+        <button class="btn btn-default" type="button" name="button">Login</button>
+        <button class="btn btn-default" type="button" name="button">Signup</button>
+</nav>
+
 <div class="container">
-    <h3>Storm {{$ctrl.storm.id}}</h3>
+    <!-- <h3>Storm {{$ctrl.storm.id}}</h3> -->
     <h2>{{$ctrl.storm.name}}</h2>
     <form ng-submit="$ctrl.createEntry()">
-        <input class="form-control" ng-model="$ctrl.entry.content" type="text" name="" value="">
+        <input class="form-control" ng-model="$ctrl.entry.content" type="text" name="" value="{{$ctrl.entry.content}}">
         <button class="btn btn-default" type="submit" name="">Create Entry</button>
         <button ui-sref="create" class="btn btn-default" type="" name="">Home</button>
     </form>
     <div class="" ng-repeat="entry in $ctrl.entries">
         <h3>{{entry.content}}</h3>
-    </div>
+      </div>
 </div>

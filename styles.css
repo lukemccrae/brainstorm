@@ -1,0 +1,31 @@
+body {
+    background-color: #337ab7;
+}
+
+.inline {
+    display: inline;
+}
+
+.vertical-center {
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+}
+
+.margin-sm {
+    margin-top: 1em;
+}
+
+.center {
+    margin-top: 30vh;
+}
+
+.white {
+    color: white;
+}

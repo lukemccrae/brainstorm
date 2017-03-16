@@ -1,9 +1,23 @@
-<div class="container">
-    <h1>Welcome to Brainstorm</h1>
-    <img src="images/brainstorm.png" alt="">
-    <form ng-submit="$ctrl.createStorm()">
-        <input class="form-control" ng-model="$ctrl.storm.name" type="text" name="storm" value="">
-        <button class="btn btn-default" type="submit" name="">Create a Storm</button>
-    </form>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <img height="60" width="60" src="images/brainstorm.png" alt="">
+        <!-- <button class="btn btn-default" type="button" name="button">Login</button> -->
+        <!-- <button class="btn btn-default" type="button" name="button">Signup</button> -->
+</nav>
 
+
+<div class="container">
+    <div class="row">
+        <h3 class="white">Brainstorm</h3>
+        <div class="center">
+            <form class="vertical-center input-group-lg" ng-submit="$ctrl.createStorm()">
+                <input placeholder="Enter description of brainstorm session..." autofocus="autofocus" class="offset-center form-control" ng-model="$ctrl.storm.name" type="text" name="storm" value="">
+                <button class="btn btn-default col-md-1 col-sm-offset-5 margin-sm" type="submit">Create</button>
+                <label>
+                  <input type="checkbox" name="favoriteColors" ng-model="$ctrl.formData.favoriteColors.red">
+                </label>
+                <button type="button" ng-click="$ctrl.test()" name="button"></button>
+            </form>
+        </div>
+    </div>
 </div>

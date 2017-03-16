@@ -15,19 +15,12 @@
                 name: vm.storm.name,
                 date: new Date()
             }
-            $http({
-                    url: `http://localhost:3000/`,
-                    method: "POST",
-                    data: vm.create
-                })
+            $http.post('http://localhost:3000/', vm.create)
                 .then(function(response) {
-                        $state.go('storm', {
-                            "id": response.data
-                        })
-                    },
-                    function(response) {
-                        console.log(response);
-                    });
+                    $state.go('storm', {
+                        "id": response.data
+                    })
+                })
         }
     }
 }());
