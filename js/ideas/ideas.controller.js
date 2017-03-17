@@ -2,9 +2,9 @@
     'use strict'
 
     angular.module('app')
-        .component('storm', {
+        .component('ideas', {
             controller: controller,
-            templateUrl: '/js/storm/storm.component.html'
+            templateUrl: '/js/ideas/ideas.component.html'
         })
 
     function controller($http, $state, $stateParams) {
@@ -31,6 +31,7 @@
             // POST new entry to the database
             $http.post(`http://localhost:3000/entry/${$stateParams.id}`, vm.entry)
                 .then(function(response) {
+                    vm.entry.content = null;
                     vm.getEntries()
                 })
         }
@@ -48,6 +49,27 @@
             }, function errorCallback(response) {
                 console.log(response);
             });
+        }
+
+        vm.updateEntry = function(entry) {
+            console.log(entry);
+            $http.put(`http://localhost:3000/entry/${entry.id}`, entry).then(function(response) {
+                    console.log(response);
+                })
+                .catch(function(response) {
+                    console.log(response);
+                })
+        }
+
+        vm.deleteEntry = function(entry) {
+            $http.delete(`http://localhost:3000/entry/${entry.id}`).then(function(response) {});
+        }
+
+        vm.govotechat = function(entry) {
+            $state.go('votechat', {
+                "id": $stateParams.id,
+                ideas: vm.entries
+            })
         }
     }
 

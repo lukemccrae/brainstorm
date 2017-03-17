@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <img height="60" width="60" src="images/brainstorm.png" alt="">
+        <h3 class="inline">Brainstorm</h3>
+        <!-- <button class="btn btn-default" type="button" name="button">Login</button> -->
+        <!-- <button class="btn btn-default" type="button" name="button">Signup</button> -->
+</nav>
+<div class="container">
+    <div class="row">
+        <div id="chatBox" class="white col-md-7">
+            <div id="messages">
+                <h4 ng-repeat="message in $ctrl.messages" class="black">{{message.content}}</h4>
+            </div>
+            <form id="chatForm" class="navbar-fixed-bottom" ng-submit="$ctrl.postChat()" method="post">
+                <textarea autofocus="autofocus" ng-model="$ctrl.chatMessage.content" class="form-control" type="text" placeholder="Chat message..."></textarea>
+                <button type="submit" class="btn btn-default" name="button">Submit</button>
+            </form>
+        </div>
+        <div id="chatIdeas" class="white col-md-4">
+
+            <!-- order this repeat by vote count -->
+            <div ng-repeat="idea in $ctrl.ideas">
+                <button class="btn btn-default btn-xs" ng-click="$ctrl.upVote(idea)" type="button" name="button">↑</button>
+                <h4 class="black inline">{{idea.votes}} {{idea.content}}</h4>
+            </div>
+        </div>
+
+    </div>
+    <button ng-click="$ctrl.govotechat()" class="btn btn-default" type="button" name="button">Next</button>
+
+</div>

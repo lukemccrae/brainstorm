@@ -14,9 +14,17 @@
                 component: 'create',
             })
             .state({
-                name: 'storm',
+                name: 'ideas',
                 url: '/:id',
-                component: 'storm',
+                component: 'ideas',
+            })
+            .state({
+                name: 'votechat',
+                url: '/:id/votechat',
+                component: 'votechat',
+                params: {
+                    ideas: null
+                }
             })
         $urlRouterProvider.otherwise('/')
     }

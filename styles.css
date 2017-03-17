@@ -27,5 +27,31 @@ body {
 }
 
 .white {
+    background-color: white;
     color: white;
+}
+
+.black {
+    color: black;
+}
+
+#chatBox {
+    position: relative;
+    height: 30em;
+    margin-bottom: 2em;
+}
+
+#messages {
+    padding-top: .6em;
+    padding-left: .6em;
+}
+
+#chatForm {
+    position: absolute;
+    padding: 1em;
+}
+
+#chatIdeas {
+    margin-left: 4em;
+    height: 30em;
 }

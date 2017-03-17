@@ -17,7 +17,7 @@
             }
             $http.post('http://localhost:3000/', vm.create)
                 .then(function(response) {
-                    $state.go('storm', {
+                    $state.go('ideas', {
                         "id": response.data
                     })
                 })
